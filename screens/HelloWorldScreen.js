@@ -4,6 +4,7 @@ import HelloWorld from '../components/HelloWorld';
 import Bananas from '../components/Bananas';
 import LotsOfGreetings from '../components/LotsOfGreetings';
 import BlinkLines from '../components/BlinkLines';
+import LotsOfStyles from '../components/LotsOfStyles';
 
 const HelloWorldScreen = () => {
   return (
@@ -12,6 +13,7 @@ const HelloWorldScreen = () => {
       <Bananas />
       <LotsOfGreetings />
       <BlinkLines />
+      <LotsOfStyles />
     </View>
   );
 };
