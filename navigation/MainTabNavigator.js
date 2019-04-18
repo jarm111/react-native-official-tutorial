@@ -11,6 +11,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import HelloWorldScreen from '../screens/HelloWorldScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen
@@ -25,6 +26,24 @@ HomeStack.navigationOptions = {
         Platform.OS === 'ios'
           ? `ios-information-circle${focused ? '' : '-outline'}`
           : 'md-information-circle'
+      }
+    />
+  )
+};
+
+const HelloWorldStack = createStackNavigator({
+  HelloWorld: HelloWorldScreen
+});
+
+HelloWorldStack.navigationOptions = {
+  tabBarLabel: 'Hello World',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-globe${focused ? '' : '-outline'}`
+          : 'md-globe'
       }
     />
   )
@@ -60,6 +79,7 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
+  HelloWorldStack,
   LinksStack,
   SettingsStack
 });
