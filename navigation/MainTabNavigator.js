@@ -13,6 +13,7 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import HelloWorldScreen from '../screens/HelloWorldScreen';
 import LayoutScreen from '../screens/LayoutScreen';
+import MiscScreen from '../screens/MiscScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen
@@ -68,6 +69,24 @@ LayoutStack.navigationOptions = {
   )
 };
 
+const MiscStack = createStackNavigator({
+  Misc: MiscScreen
+});
+
+MiscStack.navigationOptions = {
+  tabBarLabel: 'Misc',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-gift${focused ? '' : '-outline'}`
+          : 'md-gift'
+      }
+    />
+  )
+};
+
 const LinksStack = createStackNavigator({
   Links: LinksScreen
 });
@@ -100,6 +119,7 @@ export default createBottomTabNavigator({
   HomeStack,
   HelloWorldStack,
   LayoutStack,
+  MiscStack,
   LinksStack,
   SettingsStack
 });
