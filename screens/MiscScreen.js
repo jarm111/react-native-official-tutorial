@@ -1,8 +1,8 @@
 import React from 'react';
-import HelloWorld from '../components/HelloWorld';
+import PizzaTranslator from '../components/PizzaTranslator';
 
 const MiscScreen = () => {
-  const components = [<HelloWorld />];
+  const components = [<PizzaTranslator />];
 
   return components[0];
 };
