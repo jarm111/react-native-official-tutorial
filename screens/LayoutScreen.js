@@ -1,12 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
 import FixedDimensionsBasics from '../components/FixedDimensionsBasics';
 import FlexDimensionsBasics from '../components/FlexDimensionsBasics';
+import JustifyContentBasics from '../components/JustifyContentBasics';
 
 const LayoutScreen = () => {
-  const layouts = [<FixedDimensionsBasics />, <FlexDimensionsBasics />];
+  const layouts = [
+    <FixedDimensionsBasics />,
+    <FlexDimensionsBasics />,
+    <JustifyContentBasics />
+  ];
 
-  return <View style={{ flex: 1 }}>{layouts[0]}</View>;
+  return layouts[2];
 };
 
 export default LayoutScreen;
