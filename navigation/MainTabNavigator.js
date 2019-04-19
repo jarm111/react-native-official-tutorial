@@ -12,6 +12,7 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import HelloWorldScreen from '../screens/HelloWorldScreen';
+import LayoutScreen from '../screens/LayoutScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen
@@ -49,6 +50,24 @@ HelloWorldStack.navigationOptions = {
   )
 };
 
+const LayoutStack = createStackNavigator({
+  Layout: LayoutScreen
+});
+
+LayoutStack.navigationOptions = {
+  tabBarLabel: 'Layout',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-grid${focused ? '' : '-outline'}`
+          : 'md-grid'
+      }
+    />
+  )
+};
+
 const LinksStack = createStackNavigator({
   Links: LinksScreen
 });
@@ -80,6 +99,7 @@ SettingsStack.navigationOptions = {
 export default createBottomTabNavigator({
   HomeStack,
   HelloWorldStack,
+  LayoutStack,
   LinksStack,
   SettingsStack
 });
