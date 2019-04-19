@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
-import HelloWorld from '../components/HelloWorld';
+import FixedDimensionsBasics from '../components/FixedDimensionsBasics';
 
 const LayoutScreen = () => {
   return (
     <View>
-      <HelloWorld />
+      <FixedDimensionsBasics />
     </View>
   );
 };
