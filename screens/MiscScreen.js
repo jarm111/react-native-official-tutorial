@@ -1,10 +1,11 @@
 import React from 'react';
 import PizzaTranslator from '../components/PizzaTranslator';
+import ButtonBasics from '../components/ButtonBasics';
 
 const MiscScreen = () => {
-  const components = [<PizzaTranslator />];
+  const components = [<PizzaTranslator />, <ButtonBasics />];
 
-  return components[0];
+  return components[1];
 };
 
 export default MiscScreen;
