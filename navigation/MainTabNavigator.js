@@ -14,6 +14,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import HelloWorldScreen from '../screens/HelloWorldScreen';
 import LayoutScreen from '../screens/LayoutScreen';
 import MiscScreen from '../screens/MiscScreen';
+import FetchExample from '../components/FetchExample';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen
@@ -87,6 +88,24 @@ MiscStack.navigationOptions = {
   )
 };
 
+const NetworkingStack = createStackNavigator({
+  Networking: FetchExample
+});
+
+NetworkingStack.navigationOptions = {
+  tabBarLabel: 'Network',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-cloud-circle${focused ? '' : '-outline'}`
+          : 'md-cloud-circle'
+      }
+    />
+  )
+};
+
 const LinksStack = createStackNavigator({
   Links: LinksScreen
 });
@@ -120,6 +139,7 @@ export default createBottomTabNavigator({
   HelloWorldStack,
   LayoutStack,
   MiscStack,
+  NetworkingStack,
   LinksStack,
   SettingsStack
 });
